@@ -5,8 +5,26 @@
       <router-link to="/about">About</router-link>
     </div>
     <router-view/>
+    {{sayHello('typescript')}}
   </div>
 </template>
+
+<script lang="ts">
+import Vue from 'vue'
+
+export default Vue.extend({
+  data() {
+    return {
+      result: ''
+    }
+  },
+  methods: {
+    sayHello(someone: string): string {
+      return this.result = `hello ${someone}`
+    }
+  }
+})
+</script>
 
 <style lang="scss">
 #app {
